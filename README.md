@@ -1,6 +1,6 @@
 # 숫자 야구
 
-## 🚀 기능 요구 사항
+## 🚀 기능 요구 사항 ([기능 목록 작성](./docs/README.md))
 
 기본적으로 1부터 9까지 서로 다른 수로 이루어진 3자리의 수를 맞추는 게임이다.
 
@@ -119,12 +119,13 @@
 
 ```java
 List<Integer> computer = new ArrayList<>();
-while (computer.size() < 3) {
-    int randomNumber = Randoms.pickNumberInRange(1, 9);
-    if (!computer.contains(randomNumber)) {
+        while (computer.size() < 3) {
+        int randomNumber = Randoms.pickNumberInRange(1, 9);
+        if (!computer.contains(randomNumber)) {
         computer.add(randomNumber);
-    }
-}
+        }
+        }
 ```
+ 
 
 
