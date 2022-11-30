@@ -24,4 +24,11 @@ public class Game {
         }
         return ballCount;
     }
+
+    public static boolean nothing(List<Integer> computerNumber, List<Integer> userNumber) {
+        if (ball(computerNumber, userNumber) == 0 && strike(computerNumber, userNumber) == 0) {
+            return true;
+        }
+        return false;
+    }
 }
