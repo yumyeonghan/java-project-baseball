@@ -14,4 +14,14 @@ public class Game {
         }
         return strikeCount;
     }
+
+    public static int ball(List<Integer> computerNumber, List<Integer> userNumber) {
+        int ballCount = 0;
+        for (int i = 0; i < NUMBER_SIZE; i++) {
+            if (!(computerNumber.get(i) == userNumber.get(i)) && computerNumber.contains(userNumber.get(i))) {
+                ballCount++;
+            }
+        }
+        return ballCount;
+    }
 }
