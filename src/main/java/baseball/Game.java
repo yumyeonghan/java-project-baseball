@@ -4,6 +4,7 @@ import java.util.List;
 
 public class Game {
     private static final int NUMBER_SIZE = 3;
+    private static final int NOTHING = 0;
 
     public static int strike(List<Integer> computerNumber, List<Integer> userNumber) {
         int strikeCount = 0;
@@ -26,7 +27,7 @@ public class Game {
     }
 
     public static boolean nothing(List<Integer> computerNumber, List<Integer> userNumber) {
-        if (ball(computerNumber, userNumber) == 0 && strike(computerNumber, userNumber) == 0) {
+        if (ball(computerNumber, userNumber) == NOTHING && strike(computerNumber, userNumber) == NOTHING) {
             return true;
         }
         return false;
