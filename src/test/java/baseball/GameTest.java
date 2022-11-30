@@ -27,5 +27,11 @@ class GameTest {
         assertThat(Game.ball(computerNumber, userNumber)).isEqualTo(3);
     }
 
+    @Test
+    void 낫싱() {
+        computerNumber = new ArrayList<>(Arrays.asList(3,1,2));
+        userNumber = new ArrayList<>(Arrays.asList(4,5,6));
+        assertThat(Game.nothing(computerNumber, userNumber)).isTrue();
+    }
 }
 
