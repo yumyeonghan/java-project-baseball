@@ -5,15 +5,13 @@ import java.util.List;
 public class Game {
     private static final int NUMBER_SIZE = 3;
 
-    public static boolean strike(List<Integer> computerNumber, List<Integer> userNumber) {
+    public static int strike(List<Integer> computerNumber, List<Integer> userNumber) {
+        int strikeCount = 0;
         for (int i = 0; i < NUMBER_SIZE; i++) {
             if (computerNumber.get(i) == userNumber.get(i)) {
-                continue;
-            }
-            if (!(computerNumber.get(i) == userNumber.get(i))) {
-                return false;
+                strikeCount++;
             }
         }
-        return true;
+        return strikeCount;
     }
 }
