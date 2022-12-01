@@ -1,7 +1,5 @@
 package baseball;
 
-import java.util.List;
-
 public class Game {
     private static final int NUMBER_SIZE = 3;
     private static final int NOTHING = 0;
