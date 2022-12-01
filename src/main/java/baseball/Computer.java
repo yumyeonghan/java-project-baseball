@@ -9,6 +9,9 @@ public class Computer {
 
     List<Integer> computerNumber;
 
+    public Computer() {
+    }
+
     public List<Integer> generateNumber() {
         computerNumber = new ArrayList<>();
         while (computerNumber.size() < 3) {

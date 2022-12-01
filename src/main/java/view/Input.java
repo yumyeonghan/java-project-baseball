@@ -8,6 +8,9 @@ import java.util.stream.Collectors;
 
 public class Input {
 
+    public Input() {
+    }
+
     public List<Integer> inputNumber() {
 
         System.out.print("숫자를 입력해주세요 : ");

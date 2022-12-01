@@ -4,6 +4,9 @@ public class Game {
     private static final int NUMBER_SIZE = 3;
     private static final int NOTHING = 0;
 
+    public Game() {
+    }
+
     public static int strike(CompareNumbers compareNumbers) {
         int strikeCount = 0;
         for (int i = 0; i < NUMBER_SIZE; i++) {

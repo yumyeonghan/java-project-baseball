@@ -5,6 +5,9 @@ import baseball.Game;
 
 public class Output {
 
+    public Output() {
+    }
+
     public void printResult(CompareNumbers compareNumbers) {
         int ballCount = Game.ball(compareNumbers);
         int strikeCount = Game.strike(compareNumbers);

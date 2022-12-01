@@ -7,6 +7,9 @@ public class CompareNumbers {
     private List<Integer> computerNumber;
     private List<Integer> userNumber;
 
+    public CompareNumbers() {
+    }
+
     public List<Integer> getComputerNumber() {
         return computerNumber;
     }
