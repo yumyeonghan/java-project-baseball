@@ -10,6 +10,7 @@ public class Input {
 
     public List<Integer> inputNumber() {
 
+        System.out.print("숫자를 입력해주세요 : ");
         List<Integer> userNumber = Arrays.stream(Console.readLine().split(""))
                 .map(v -> Integer.parseInt(v)).collect(Collectors.toList());
         return userNumber;
