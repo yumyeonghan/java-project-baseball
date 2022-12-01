@@ -1,37 +1,41 @@
 package baseball;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 class GameTest {
 
-    private List<Integer> computerNumber;
-    private List<Integer> userNumber;
+    CompareNumbers compareNumbers;
+
+    @BeforeEach
+    void init() {
+        compareNumbers = new CompareNumbers();
+    }
 
     @Test
     void 스트라이크() {
-        computerNumber = new ArrayList<>(Arrays.asList(1,2,3));
-        userNumber = new ArrayList<>(Arrays.asList(1,2,3));
-        assertThat(Game.strike(computerNumber, userNumber)).isEqualTo(3);
+        compareNumbers.setComputerNumber(new ArrayList<>(Arrays.asList(1, 2, 3)));
+        compareNumbers.setUserNumber(new ArrayList<>(Arrays.asList(1, 2, 3)));
+        assertThat(Game.strike(compareNumbers)).isEqualTo(3);
     }
 
     @Test
     void 볼() {
-        computerNumber = new ArrayList<>(Arrays.asList(3,1,2));
-        userNumber = new ArrayList<>(Arrays.asList(1,2,3));
-        assertThat(Game.ball(computerNumber, userNumber)).isEqualTo(3);
+        compareNumbers.setComputerNumber(new ArrayList<>(Arrays.asList(1, 2, 3)));
+        compareNumbers.setUserNumber(new ArrayList<>(Arrays.asList(3, 1, 2)));
+        assertThat(Game.ball(compareNumbers)).isEqualTo(3);
     }
 
     @Test
     void 낫싱() {
-        computerNumber = new ArrayList<>(Arrays.asList(3,1,2));
-        userNumber = new ArrayList<>(Arrays.asList(4,5,6));
-        assertThat(Game.nothing(computerNumber, userNumber)).isTrue();
+        compareNumbers.setComputerNumber(new ArrayList<>(Arrays.asList(1, 2, 3)));
+        compareNumbers.setUserNumber(new ArrayList<>(Arrays.asList(4, 5, 6)));
+        assertThat(Game.nothing(compareNumbers)).isTrue();
     }
 }
 
