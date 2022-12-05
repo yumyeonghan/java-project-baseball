@@ -25,4 +25,13 @@ class ExceptionTest {
                         .isInstanceOf(IllegalArgumentException.class)
         );
     }
+
+    @ValueSource(strings = {"1,2"})
+    @ParameterizedTest
+    void 숫자_길이_테스트(String inputNumbers) {
+        assertSimpleTest(() ->
+                assertThatThrownBy(() -> Exception.validateNumbers(inputNumbers))
+                        .isInstanceOf(IllegalArgumentException.class)
+        );
+    }
 }
