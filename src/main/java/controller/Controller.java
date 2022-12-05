@@ -24,7 +24,7 @@ public class Controller {
         try {
             while (true) {
                 compareNumbers.setUserNumber(input.inputNumber());
-                output.printResult(compareNumbers);
+                output.printResult(Game.gameResult(compareNumbers));
                 if (Game.strike(compareNumbers) == TERMINATION_CONDITION) {
                     if (input.restart() == 1) {
                         return true;
