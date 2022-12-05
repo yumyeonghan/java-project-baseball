@@ -39,7 +39,7 @@ class ExceptionTest {
     @ParameterizedTest
     void 재시작_또는_종료_조건의_숫자_테스트(String inputNumber) {
         assertSimpleTest(() ->
-                assertThatThrownBy(() -> Exception.validateRestartNumbers(inputNumber))
+                assertThatThrownBy(() -> Exception.validateNumberFormat(inputNumber))
                         .isInstanceOf(IllegalArgumentException.class)
         );
     }

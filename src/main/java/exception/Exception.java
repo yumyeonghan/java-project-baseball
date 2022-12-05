@@ -35,7 +35,7 @@ public class Exception {
         }
     }
 
-    public static void validateRestartNumbers(String inputNumber) {
+    public static void validateNumberFormat(String inputNumber) {
         checkNumberFormat(inputNumber);
     }
 
