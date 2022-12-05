@@ -11,9 +11,7 @@ public class Exception {
 
     public static void validateNumbers(String inputNumbers) {
         checkNonNumericCharacters(inputNumbers);
-
         checkDuplicateNumber(inputNumbers);
-
         checkNumberLength(inputNumbers);
     }
 

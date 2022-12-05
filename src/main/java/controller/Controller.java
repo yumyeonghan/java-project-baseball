@@ -20,7 +20,6 @@ public class Controller {
         while (true) {
             compareNumbers.setUserNumber(input.inputNumber());
             output.printResult(Game.gameResult(compareNumbers));
-
             inputNumber = getNumberInput(compareNumbers, inputNumber);
             if (checkRestartCondition(inputNumber)) return true;
             if (checkExitCondition(inputNumber)) return false;

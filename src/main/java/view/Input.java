@@ -13,10 +13,14 @@ public class Input {
     }
 
     public List<Integer> inputNumber() {
-
         System.out.print("숫자를 입력해주세요 : ");
         String inputNumbers = Console.readLine();
         Exception.validateNumbers(inputNumbers);
+        List<Integer> userNumber = toList(inputNumbers);
+        return userNumber;
+    }
+
+    private List<Integer> toList(String inputNumbers) {
         List<Integer> userNumber = Arrays.stream(inputNumbers.split(""))
                 .map(v -> Integer.parseInt(v)).collect(Collectors.toList());
         return userNumber;
