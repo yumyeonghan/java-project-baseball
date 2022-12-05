@@ -7,11 +7,20 @@ public class Exception {
 
     private static final String RESTART = "1";
     private static final String EXIT = "2";
+    private static final int REQUIRED_NUMBER_LENGTH = 3;
 
     public static void validateNumbers(String inputNumbers) {
         checkNonNumericCharacters(inputNumbers);
 
         checkDuplicateNumber(inputNumbers);
+
+        checkNumberLength(inputNumbers);
+    }
+
+    private static void checkNumberLength(String inputNumbers) {
+        if (inputNumbers.length() != REQUIRED_NUMBER_LENGTH) {
+            throw new IllegalArgumentException();
+        }
     }
 
     private static void checkDuplicateNumber(String inputNumbers) {
@@ -26,7 +35,7 @@ public class Exception {
         }
     }
 
-    public static void validateRestartNumbers (String inputNumber) {
+    public static void validateRestartNumbers(String inputNumber) {
         checkNumberFormat(inputNumber);
     }
 
