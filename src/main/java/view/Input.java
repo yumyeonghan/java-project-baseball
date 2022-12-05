@@ -1,6 +1,7 @@
 package view;
 
 import camp.nextstep.edu.missionutils.Console;
+import exception.Exception;
 
 import java.util.Arrays;
 import java.util.List;
@@ -14,13 +15,17 @@ public class Input {
     public List<Integer> inputNumber() {
 
         System.out.print("숫자를 입력해주세요 : ");
-        List<Integer> userNumber = Arrays.stream(Console.readLine().split(""))
+        String inputNumbers = Console.readLine();
+        Exception.validateNumbers(inputNumbers);
+        List<Integer> userNumber = Arrays.stream(inputNumbers.split(""))
                 .map(v -> Integer.parseInt(v)).collect(Collectors.toList());
         return userNumber;
     }
 
     public int restart() {
         System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
-        return Integer.parseInt(Console.readLine());
+        String inputNumber = Console.readLine();
+        Exception.validateNumberFormat(inputNumber);
+        return Integer.parseInt(inputNumber);
     }
 }
