@@ -1,9 +1,9 @@
 package baseball;
 
 public class Game {
+
     private static final int NUMBER_SIZE = 3;
     private static final int NOTHING = 0;
-    private static final int STRIKE_COUNT_3 = 3;
 
     public Game() {
     }
@@ -50,17 +50,17 @@ public class Game {
     }
 
     private static boolean isNotCondition(int strikeCount) {
-        return strikeCount != STRIKE_COUNT_3;
+        return strikeCount != ConditionData.TERMINATION_CONDITION.getNumberToInt();
     }
 
     private static String judgeResult(int ballCount, int strikeCount, String resultMessage) {
-        if (ballCount != 0 && strikeCount != 0) {
+        if (ballCount != NOTHING && strikeCount != NOTHING) {
             resultMessage = ballCount + "볼 " + strikeCount + "스트라이크";
         }
-        if (strikeCount != 0 && ballCount == 0) {
+        if (strikeCount != NOTHING && ballCount == NOTHING) {
             resultMessage = strikeCount + "스트라이크";
         }
-        if (ballCount != 0 && strikeCount == 0) {
+        if (ballCount != NOTHING && strikeCount == NOTHING) {
             resultMessage = ballCount + "볼";
         }
         return resultMessage;

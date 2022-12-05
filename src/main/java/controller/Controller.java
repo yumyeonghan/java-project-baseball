@@ -2,20 +2,19 @@ package controller;
 
 import baseball.CompareNumbers;
 import baseball.Computer;
+import baseball.ConditionData;
 import baseball.Game;
 import view.Input;
 import view.Output;
 
 public class Controller {
 
-    private static final int TERMINATION_CONDITION = 3;
-
     private final Input input = new Input();
     private final Output output = new Output();
 
     public boolean run() {
         CompareNumbers compareNumbers = initCompareNumbers();
-        int inputNumber = 0; // 재시작,종료에 사용할 숫자 초기화
+        String inputNumber = ""; // 재시작,종료에 사용할 숫자 초기화
 
         while (true) {
             compareNumbers.setUserNumber(input.inputNumber());
@@ -33,22 +32,22 @@ public class Controller {
         return compareNumbers;
     }
 
-    private boolean checkExitCondition(int inputNumber) {
-        if (inputNumber == 2) {
+    private boolean checkExitCondition(String inputNumber) {
+        if (inputNumber.equals(ConditionData.EXIT_CONDITION.getNumberToString())) {
             return true;
         }
         return false;
     }
 
-    private boolean checkRestartCondition(int inputNumber) {
-        if (inputNumber == 1) {
+    private boolean checkRestartCondition(String inputNumber) {
+        if (inputNumber.equals(ConditionData.RESTART_CONDITION.getNumberToString())) {
             return true;
         }
         return false;
     }
 
-    private int getNumberInput(CompareNumbers compareNumbers, int inputNumber) {
-        if (Game.strike(compareNumbers) == TERMINATION_CONDITION) {
+    private String getNumberInput(CompareNumbers compareNumbers, String inputNumber) {
+        if (Game.strike(compareNumbers) == ConditionData.TERMINATION_CONDITION.getNumberToInt()) {
             inputNumber = input.restart();
         }
         return inputNumber;

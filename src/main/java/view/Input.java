@@ -26,10 +26,10 @@ public class Input {
         return userNumber;
     }
 
-    public int restart() {
+    public String restart() {
         System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
         String inputNumber = Console.readLine();
         Exception.validateNumberFormat(inputNumber);
-        return Integer.parseInt(inputNumber);
+        return inputNumber;
     }
 }
