@@ -9,24 +9,11 @@ public class Game {
     }
 
     public static int strike(CompareNumbers compareNumbers) {
-        int strikeCount = 0;
-        for (int i = 0; i < NUMBER_SIZE; i++) {
-            if (compareNumbers.getComputerNumber().get(i) == compareNumbers.getUserNumber().get(i)) {
-                strikeCount++;
-            }
-        }
-        return strikeCount;
+        return compareNumbers.compareStrikeNumbers();
     }
 
     public static int ball(CompareNumbers compareNumbers) {
-        int ballCount = 0;
-        for (int i = 0; i < NUMBER_SIZE; i++) {
-            if (!(compareNumbers.getComputerNumber().get(i) == compareNumbers.getUserNumber().get(i))
-                    && compareNumbers.getComputerNumber().contains(compareNumbers.getUserNumber().get(i))) {
-                ballCount++;
-            }
-        }
-        return ballCount;
+        return compareNumbers.compareBallNumbers();
     }
 
     public static boolean nothing(CompareNumbers compareNumbers) {

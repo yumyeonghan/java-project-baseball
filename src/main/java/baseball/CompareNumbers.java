@@ -10,19 +10,32 @@ public class CompareNumbers {
     public CompareNumbers() {
     }
 
-    public List<Integer> getComputerNumber() {
-        return computerNumber;
-    }
-
     public void setComputerNumber(List<Integer> computerNumber) {
         this.computerNumber = computerNumber;
     }
 
-    public List<Integer> getUserNumber() {
-        return userNumber;
-    }
-
     public void setUserNumber(List<Integer> userNumber) {
         this.userNumber = userNumber;
+    }
+
+    public int compareStrikeNumbers() {
+        int strikeCount = 0;
+        for (int i = 0; i < 3; i++) {
+            if (this.computerNumber.get(i) == this.userNumber.get(i)) {
+                strikeCount++;
+            }
+        }
+        return strikeCount;
+    }
+
+    public int compareBallNumbers() {
+        int ballCount = 0;
+        for (int i = 0; i < 3; i++) {
+            if (!(this.computerNumber.get(i) == this.userNumber.get(i))
+                    && this.computerNumber.contains(this.userNumber.get(i))) {
+                ballCount++;
+            }
+        }
+        return ballCount;
     }
 }
