@@ -1,4 +1,5 @@
 # 숫자 야구
+**<u>해당 프로젝트는 우아한테크코스 프리코스 과정에서 가져온 문제입니다.</u>**
 
 ## 🚀 기능 요구 사항 ([기능 목록 작성](./docs/README.md))
 
@@ -108,24 +109,4 @@
 - 인스턴스 변수 접근 제어자는 private 로 객체의 상태 접근을 제한한다
 - 필드(인스턴스 변수) 수를 가능한 줄이자
 - getter를 사용하는 대신 객체에 메시지를 보내자
-
-### 라이브러리
-
-- `camp.nextstep.edu.missionutils`에서 제공하는 `Randoms` 및 `Console` API를 사용하여 구현해야 한다.
-    - Random 값 추출은 `camp.nextstep.edu.missionutils.Randoms`의 `pickNumberInRange()`를 활용한다.
-    - 사용자가 입력하는 값은 `camp.nextstep.edu.missionutils.Console`의 `readLine()`을 활용한다.
-
-#### 사용 예시
-
-```java
-List<Integer> computer = new ArrayList<>();
-        while (computer.size() < 3) {
-        int randomNumber = Randoms.pickNumberInRange(1, 9);
-        if (!computer.contains(randomNumber)) {
-        computer.add(randomNumber);
-        }
-        }
-```
- 
-
 
